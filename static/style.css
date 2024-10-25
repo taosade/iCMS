@@ -57,11 +57,18 @@ body {
 	line-height: 24px;
 }
 
-#sidebar {
+#main {
+	display: flex;
+	gap: 32px;
+	padding: 32px;
 	position: fixed;
-		top: 100px;
+		top: 80px;
 		left: 0px;
-		width: 200px;
+		width: 100%;
+}
+
+#sidebar {
+	white-space: nowrap;
 }
 
 #sidebar ul {
@@ -71,4 +78,27 @@ body {
 
 #sidebar li {
 	margin: 4px 0;
+}
+
+#content {
+	background-color: #FFFFFF;
+	border: 1px solid #333333;
+	border-radius: 8px;
+	flex-grow: 1;
+	font-family: Georgia, Times, serif;
+	min-width: 200px;
+	padding: 32px;
+}
+
+#content h1 {
+	border-bottom: 1px solid #333333;
+	font-size: 32px;
+	line-height: 32px;
+	padding-bottom: 16px;
+
+}
+
+#content p {
+	margin-top: 32px;
+
 }
