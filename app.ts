@@ -14,6 +14,9 @@ app.get('/mongo', async (ctx) => {
 // Main UI layout
 app.get('/', serveStatic({ path: 'static/layout.html' }))
 
+// Form layout
+app.get('/form', serveStatic({ path: 'static/form.html' }))
+
 // Static assets
 app.get('/static/*', serveStatic({ root: './' }))
 
