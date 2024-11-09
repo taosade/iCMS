@@ -71,13 +71,33 @@ body {
 	white-space: nowrap;
 }
 
-#sidebar ul {
-	list-style-type: none;
-	padding-left: 24px;
+
+#sidebar div.tree-branch > div.tree-branch {
+	margin-left: 16px;
 }
 
-#sidebar li {
-	margin: 4px 0;
+#sidebar div.tree-header {
+	align-items: center;
+	display: flex;
+	gap: 4px;
+}
+
+#sidebar div.tree-header > a {
+	max-width: 256px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#sidebar div.tree-header > div.buttons {
+	background-color: #FFFFFF;
+	border-radius: 8px;
+	font-size: 16px;
+	opacity: 0;
+	padding: 0px 8px;
+}
+
+#sidebar div.tree-header:hover > div.buttons {
+	opacity: 1;
 }
 
 #content {
@@ -103,6 +123,14 @@ body {
 #document p {
 	margin-top: 32px;
 
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	opacity: 0.69;
 }
 
 textarea {

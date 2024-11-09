@@ -1,6 +1,4 @@
-import '@std/dotenv/load'
-
-export default function render() { return `
+export default function render(): string { return `
 <div id="form">
 	<div id="ai-bar">
 		<div id="ai-bar-header">
@@ -52,7 +50,7 @@ export default function render() { return `
 			</div>
 		</div>
 	</div>
-	<script>
+	<script defer>
 
 		// Toggling generative AI form visibility
 
@@ -83,7 +81,7 @@ export default function render() { return `
 				buttonIcon.className = 'fa fa-fw fa-play-circle'
 			}
 
-			const res = await fetch('http://${Deno.env.get('SERVER_HOST')}:${Deno.env.get('SERVER_PORT')}/generate', {
+			const res = await fetch('/generate', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({

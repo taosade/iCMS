@@ -1,37 +1,51 @@
 import '@std/dotenv/load'
 import { Hono } from '@hono/hono'
 import { serveStatic } from '@hono/hono/deno'
-import { documents } from "./db.ts"
+import { ObjectId } from 'jsr:@db/mongo'
+
+import { generate } from './openAi.ts'
+import { documents } from './db.ts'
 
 import renderLayout from './views/layout.ts'
 import renderForm from './views/form.ts'
 
-import { generate } from './openAi.ts'
-
 const app = new Hono()
 
-// MongoDB test
-app.get('/mongo', async (ctx) => {
-	const data = await documents.find().toArray()
-	return ctx.json(data)
+// Static assets
+
+app.get('/static/*', serveStatic({ root: './' }))
+
+// Home page
+
+app.get('/', async (ctx) => {
+	return ctx.html(await renderLayout())
 })
 
-// Main UI layout
-app.get('/', serveStatic({ path: 'static/layout.html' }))
+// Document page
+
+app.get('/documents/:id{[a-f\\d]{24}}', async (ctx) => {
+	const id = ctx.req.param('id')
+
+	const document = await documents.findOne({ _id: new ObjectId(id) })
+
+	if (!document)
+		return ctx.notFound()
+
+	return ctx.html(await renderLayout({
+		content: `<h1>${document.title}</h1>${document.text}</p>`
+	}))
+})
 
 // Form layout
 
 app.get('/form', (ctx) => {
 	return ctx.html(renderLayout({
-		content: renderForm(),
-		sidebar: ''
+		content: renderForm()
 	}))
 })
 
-// Static assets
-app.get('/static/*', serveStatic({ root: './' }))
-
 // Generative AI endpoint
+
 app.post('/generate', async (ctx) => {
 	if (ctx.req.header('Content-Type') !== 'application/json') {
 		return ctx.json({ error: 'Invalid content type' }, 400)

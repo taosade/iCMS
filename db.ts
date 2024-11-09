@@ -1,12 +1,13 @@
 import '@std/dotenv/load'
-import { MongoClient, ObjectId } from "jsr:@db/mongo"
+import { MongoClient, ObjectId } from 'jsr:@db/mongo'
 
 // Defining document schema
 
-interface DocumentSchema {
+type Document = {
 	_id: ObjectId;
+	parent: ObjectId | null;
 	title: string;
-	content: string;
+	text: string;
 }
 
 // Connecting to MongoDB cluster
@@ -41,7 +42,7 @@ try {
 	Deno.exit(1)
 }
 
-const documents = client.database(DBNAME).collection<DocumentSchema>('documents')
+const documents = client.database(DBNAME).collection<Document>('documents')
 
 export { documents }
-export type { DocumentSchema }
+export type { Document }
