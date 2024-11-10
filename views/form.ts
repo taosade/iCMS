@@ -67,7 +67,7 @@ export default function render(): string { return `
 			}
 		})
 
-		// Submitting generative AI form and 'typing' the generated text
+		// Submitting generative AI form
 
 		document.getElementById('ai-bar-form-submit').addEventListener('click', async function () {
 			const button = document.getElementById('ai-bar-form-submit')
@@ -115,7 +115,10 @@ export default function render(): string { return `
 				textArea.value += '\\n\\n'
 			}
 
+			// Imitating typing of generated text
+
 			let index = 0
+
 			const interval = setInterval(function () {
 				textArea.value += data.text[index]
 				if (++index >= data.text.length) {
@@ -129,7 +132,7 @@ export default function render(): string { return `
 	<input id="input-title" type="text" placeholder="Title">
 	<textarea id="input-text"></textarea>
 	<button id="ai-bar-form-submit">
-		<i class="fa fa-check-circle"></i>
+		<i class="fa fa-save"></i>
 		Save
 	</button>
 </div>`;

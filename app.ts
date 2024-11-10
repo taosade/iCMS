@@ -6,6 +6,7 @@ import { ObjectId } from 'jsr:@db/mongo'
 import { generate } from './openAi.ts'
 import { documents } from './db.ts'
 
+import renderDocument from './views/document.ts'
 import renderLayout from './views/layout.ts'
 import renderForm from './views/form.ts'
 
@@ -32,7 +33,7 @@ app.get('/documents/:id{[a-f\\d]{24}}', async (ctx) => {
 		return ctx.notFound()
 
 	return ctx.html(await renderLayout({
-		content: `<h1>${document.title}</h1>${document.text}</p>`
+		content: renderDocument(document)
 	}))
 })
 

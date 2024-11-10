@@ -8,6 +8,8 @@ type Document = {
 	parent: ObjectId | null;
 	title: string;
 	text: string;
+	createdAt: Date;
+	updatedAt: Date | null;
 }
 
 // Connecting to MongoDB cluster
@@ -28,16 +30,16 @@ if (!DBNAME) {
 	Deno.exit(1)
 }
 
-const client = new MongoClient();
+const client = new MongoClient()
 
 try {
 	await client.connect(URI)
 
 	client.database(DBNAME).runCommand({ ping: 1 })
 
-	console.log('Connected to MongoDB cluster')
+	console.log('Connected to MongoDB Atlas')
 } catch (error) {
-	console.error('Error connecting to MongoDB cluster:', error)
+	console.error('Error connecting to MongoDB Atlas:', error)
 
 	Deno.exit(1)
 }

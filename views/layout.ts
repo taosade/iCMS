@@ -41,7 +41,10 @@ export default async function render(data?: { content?: string }): Promise<strin
 				</div>
 			</div>
 			<div id="main">
-				${sidebar ? `<div id="sidebar">${sidebar}</div>` : ''}
+				<div id="sidebar">
+					<a href="/create"><i class="fa fa-fw fa-plus-square-o"></i>New document</a>
+					${sidebar}
+				</div>
 				${data?.content ? `<div id="content">${data.content}</div>` : ''}
 			</div>
 		</div>

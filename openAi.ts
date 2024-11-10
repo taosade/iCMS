@@ -16,6 +16,8 @@ const generate = async (request: unknown): Promise<string> => {
 		throw new Error('Failed to parse request schema')
 	}
 
+	// Constructing prompt
+
 	let prompt = ''
 
 	if (validatedRequest.data.prompt) {
@@ -33,6 +35,8 @@ const generate = async (request: unknown): Promise<string> => {
 	}
 
 	prompt += '\n\nRespond with generated text only.'
+
+	// Fetching generated text from OpenAI
 
 	const res = await fetch('https://api.openai.com/v1/chat/completions', {
 		method: 'POST',

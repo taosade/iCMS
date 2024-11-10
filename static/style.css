@@ -114,10 +114,18 @@ body {
 }
 
 #document h1 {
-	border-bottom: 1px solid #333333;
+	border-bottom: 1px solid #666666;
 	font-size: 32px;
 	line-height: 32px;
 	padding-bottom: 16px;
+}
+
+#document h2 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #666666;
+	text-transform: uppercase;
+	text-align: right;
 }
 
 #document p {
