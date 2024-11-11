@@ -11,7 +11,7 @@ As part of the project, I've experimented with a new techstack:
 
 Installation instructions:
 
-1. Provide the .env file with following constants
+1. Provide the `.env` file with following constants
 
 | Name |Description|
 | - | - |
