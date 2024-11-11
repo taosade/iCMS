@@ -1,11 +1,7 @@
+import { ObjectId } from "@db/mongo";
 import renderTreeBranch from './docTree.ts'
 
 export default async function render(data?: { content?: string }): Promise<string> {
-
-	// Render document tree in the sidebar
-
-	const sidebar = await renderTreeBranch()
-
 	return `
 	<!DOCTYPE html>
 	<html>
@@ -13,7 +9,6 @@ export default async function render(data?: { content?: string }): Promise<strin
 			<title>iCMS</title>
 			<link rel="stylesheet" type="text/css" href="/static/style.css">
 			<link rel="stylesheet" type="text/css" href="/static/fontawesome.css"/>
-			<script src="/static/script.js" defer></script>
 		</head>
 		<body>
 			<div id="header">
@@ -42,8 +37,8 @@ export default async function render(data?: { content?: string }): Promise<strin
 			</div>
 			<div id="main">
 				<div id="sidebar">
-					<a href="/create"><i class="fa fa-fw fa-plus-square-o"></i>New document</a>
-					${sidebar}
+					<a href="/documents/${new ObjectId()}/edit"><i class="fa fa-fw fa-plus-square-o"></i>New document</a>
+					${await renderTreeBranch()}
 				</div>
 				${data?.content ? `<div id="content">${data.content}</div>` : ''}
 			</div>

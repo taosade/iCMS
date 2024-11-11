@@ -5,11 +5,10 @@ import { MongoClient, ObjectId } from 'jsr:@db/mongo'
 
 type Document = {
 	_id: ObjectId;
-	parent: ObjectId | null;
+	parent?: ObjectId;
 	title: string;
 	text: string;
-	createdAt: Date;
-	updatedAt: Date | null;
+	updatedAt?: Date;
 }
 
 // Connecting to MongoDB cluster

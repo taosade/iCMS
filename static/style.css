@@ -23,7 +23,7 @@ body {
 #header {
 	align-items: center;
 	background-color: #FFAA33;
-	border-bottom: 1px solid #333333;
+	border-bottom: 1px solid #666666;
 	display: flex;
 	justify-content: flex-start;
 	position: fixed;
@@ -59,7 +59,7 @@ body {
 
 #main {
 	display: flex;
-	gap: 32px;
+	gap: 16px;
 	padding: 32px;
 	position: fixed;
 		top: 80px;
@@ -107,7 +107,7 @@ body {
 
 #document {
 	background-color: #FFFFFF;
-	border: 1px solid #333333;
+	border: 1px solid #666666;
 	border-radius: 8px;
 	font-family: Georgia, Times, serif;
 	padding: 32px;
@@ -121,16 +121,12 @@ body {
 }
 
 #document h2 {
+	color: #666666;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 16px;
-	color: #666666;
-	text-transform: uppercase;
+	margin-bottom: 16px;
 	text-align: right;
-}
-
-#document p {
-	margin-top: 32px;
-
+	text-transform: uppercase;
 }
 
 a {
