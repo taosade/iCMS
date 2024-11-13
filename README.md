@@ -25,5 +25,5 @@ Installation instructions:
 
 2. Run the application by executing `deno run dev`
 
-Developed by: Mikhail Melikhov
+Developed by: Mikhail Melikhov  
 Supervised by: Marcin Kacprowicz
