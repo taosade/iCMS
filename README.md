@@ -3,6 +3,8 @@
 ## Description
 Generative AI powered content management system. This is an educational project showcasing automated text generation and storing it as a tree-structure.
 
+<img src="static/screenshot.png" width="69%" />
+
 As part of the project, I've experimented with a new techstack:
 
 - **Deno** as a TypeScript runtime.
