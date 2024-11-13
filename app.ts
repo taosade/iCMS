@@ -84,7 +84,7 @@ app.post('/documents/:id{[a-f\\d]{24}}', async (ctx) => {
 					$set: {
 						parent: json.parent ? new ObjectId(json.parent) : undefined,
 						title: json.title.trim().substr(0, 200),
-						text: json.text.trim().substr(0, 2000),
+						text: json.text.trim().substr(0, 5000),
 						updatedAt: new Date()
 					}
 				},

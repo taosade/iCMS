@@ -5,7 +5,7 @@ const requestSchema = z.object({
 	keywords: z.string().max(200),
 	model: z.enum(['gpt-3.5-turbo', 'gpt-4', 'gpt-4-turbo', 'gpt-4o', 'gpt-4o-mini']),
 	prompt: z.string().max(200),
-	text: z.string().max(1000),
+	text: z.string().max(5000),
 	volume: z.enum(['50', '100', '200', '300', '400', '500']),
 })
 

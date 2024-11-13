@@ -11,7 +11,7 @@ type Document = {
 	updatedAt?: Date;
 }
 
-// Connecting to MongoDB cluster
+// Connecting to MongoDB Atlas
 
 const URI = Deno.env.get('MDBATLAS_URI')
 

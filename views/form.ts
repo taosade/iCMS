@@ -55,7 +55,7 @@ export default function render(document: Document): string {
 			</div>
 		</div>
 		<input id="input-title" type="text" placeholder="Title" maxlength="200" value="${document ? escapeHtml(document.title) : ''}">
-		<textarea id="input-text" maxlength="2000">${document ? escapeHtml(document.text) : ''}</textarea>
+		<textarea id="input-text" maxlength="5000">${document ? escapeHtml(document.text) : ''}</textarea>
 		<button id="document-form-submit">
 			<i class="fa fa-fw fa-save"></i>
 			Save
@@ -100,7 +100,7 @@ export default function render(document: Document): string {
 				keywords: document.getElementById('input-keywords').value.substr(0, 200),
 				model: document.getElementById('input-model').value,
 				volume: document.getElementById('input-volume').value,
-				text: document.getElementById('input-text').value.substr(0, 1000)
+				text: document.getElementById('input-text').value.substr(0, 5000)
 			})
 		})
 
@@ -136,7 +136,7 @@ export default function render(document: Document): string {
 				resetButton()
 				clearInterval(interval)
 			}
-		}, 10)
+		}, 5)
 	})
 
 	// Submitting the document form

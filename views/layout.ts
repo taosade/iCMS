@@ -37,7 +37,7 @@ export default async function render(data?: { content?: string }): Promise<strin
 			</div>
 			<div id="main">
 				<div id="sidebar">
-					<a href="/documents/${new ObjectId()}/edit"><i class="fa fa-fw fa-plus-square-o"></i>New document</a>
+					<button onclick="window.location.href='/documents/${new ObjectId()}/edit'"><i class="fa fa-pencil-square-o"></i> New document</button>
 					${await renderTreeBranch()}
 				</div>
 				${data?.content ? `<div id="content">${data.content}</div>` : ''}

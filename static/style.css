@@ -71,6 +71,10 @@ body {
 	white-space: nowrap;
 }
 
+#sidebar > button {
+	width: auto;
+	margin-bottom: 16px;
+}
 
 #sidebar div.tree-branch > div.tree-branch {
 	margin-left: 16px;
@@ -141,10 +145,10 @@ textarea {
 	border: 1px solid #333333;
 	border-radius: 8px;
 	font-family: Georgia, Times, serif;
-	height: 800px;
+	height: 666px;
 	padding: 16px;
 	width: 100%;
-	resize: none;
+	resize: vertical
 }
 
 input[type=text] {
