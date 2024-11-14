@@ -10,6 +10,7 @@ As part of the project, I've experimented with a new techstack:
 - **Deno** as a TypeScript runtime.
 - **Hono** as a backend framework.
 - **MongoDB Atlas** as a document storage.
+- **OpenAI API** as a LLM content provider.
 
 Installation instructions:
 
