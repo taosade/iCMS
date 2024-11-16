@@ -19,7 +19,7 @@ Installation instructions:
 | Name |Description|
 | - | - |
 | SERVER_HOST | Hostname e.g. 'localhost' |
-| SERVER_PORT | Application listentng port, e.g. '3000' |
+| SERVER_PORT | Application listening port, e.g. '3000' |
 | OPENAI_API_KEY | OpenAI API key to be used to fetch generated content |
 | MDBATLAS_DBNAME | MongoDB Atlas database name |
 | MDBATLAS_URI | MongoDB Atlas connection string |
