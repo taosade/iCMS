@@ -139,16 +139,12 @@ app.post('/generate', async (ctx) => {
 	}
 
 	try {
-		try {
-			const body = await ctx.req.json()
-			const text = await generate(body)
+		const body = await ctx.req.json()
+		const text = await generate(body)
 
-			return ctx.json({ text })
-		} catch (err) {
-			return ctx.json({ error: String(err) }, 500)
-		}
+		return ctx.json({ text })
 	} catch (err) {
-		return ctx.json({ error: String(err) }, 400)
+		return ctx.json({ error: String(err) }, 500)
 	}
 })
 
